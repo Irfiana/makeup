@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Glow Up Studio | Luxury Makeup Artist</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:#fff;
+    line-height:1.6;
+}
+
+:root{
+    --gold:#d4af37;
+    --gold-light:#f5dc82;
+    --dark:#151515;
+    --card:#202020;
+    --gray:#aaa;
+}
+
+/* HEADER */
+
+header{
+    min-height:620px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.85)
+    ),
+    url("https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg")
+    center/cover no-repeat;
+}
+
+.hero{
+    max-width:800px;
+}
+
+.hero small{
+    color:var(--gold);
+    letter-spacing:5px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-size:clamp(2.5rem,8vw,5rem);
+    color:var(--gold);
+    letter-spacing:5px;
+    margin:15px 0;
+}
+
+.hero p{
+    font-size:1.2rem;
+    color:#eee;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 30px;
+    background:var(--gold);
+    color:#111;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    transform:translateY(-3px);
+}
+
+/* NAV */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    background:#111;
+    border-bottom:1px solid #333;
+}
+
+nav a{
+    padding:15px 17px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+/* CONTENT */
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+}
+
+section{
+    padding:90px 0;
+    scroll-margin-top:70px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title span{
+    color:var(--gold);
+    font-size:13px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.title h2{
+    font-size:2.3rem;
+    margin-top:8px;
+}
+
+.title h2:after{
+    content:"";
+    display:block;
+    width:60px;
+    height:3px;
+    background:var(--gold);
+    margin:15px auto;
+}
+
+/* ABOUT */
+
+.about{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    color:var(--gray);
+    font-size:1.05rem;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.service{
+    background:var(--card);
+    border:1px solid #333;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-7px);
+    border-color:var(--gold);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.service h3{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.service p{
+    color:var(--gray);
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+}
+
+.photo{
+    position:relative;
+    overflow:hidden;
+    border-radius:12px;
+    border:1px solid #333;
+}
+
+.photo img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.photo:hover img{
+    transform:scale(1.08);
+}
+
+.caption{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:15px;
+    color:#fff;
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.9)
+    );
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.product{
+    background:var(--card);
+    border:1px solid #333;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.product img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    color:var(--gold);
+}
+
+.product-info p{
+    color:var(--gray);
+}
+
+/* TESTIMONIAL */
+
+.testimonials{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.testimonial{
+    background:var(--card);
+    border:1px solid #333;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.testimonial img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.testimonial-content{
+    padding:25px;
+}
+
+.stars{
+    color:var(--gold);
+    font-size:20px;
+}
+
+.testimonial p{
+    color:#ccc;
+    font-style:italic;
+    margin-top:10px;
+}
+
+.testimonial h4{
+    color:var(--gold);
+    margin-top:15px;
+}
+
+.illustration{
+    color:#777;
+    font-size:12px;
+    margin-top:8px;
+}
+
+/* PRICES */
+
+.prices{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.price-card{
+    background:var(--card);
+    border:1px solid #333;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.price-card.featured{
+    border:2px solid var(--gold);
+}
+
+.price-card h3{
+    color:var(--gold);
+}
+
+.price{
+    font-size:2rem;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.price-card ul{
+    list-style:none;
+    color:#bbb;
+    margin-bottom:20px;
+}
+
+/* BOOKING */
+
+.booking{
+    max-width:700px;
+    margin:auto;
+}
+
+form{
+    background:var(--card);
+    border:1px solid #333;
+    padding:35px;
+    border-radius:12px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    color:var(--gold);
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+
+    background:#111;
+    color:white;
+
+    border:1px solid #444;
+    border-radius:5px;
+
+    font-size:1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:var(--gold);
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    padding:15px;
+
+    background:var(--gold);
+    color:#111;
+
+    border:0;
+    border-radius:5px;
+
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:white;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    background:#080808;
+    border-top:1px solid #333;
+    padding:40px 20px;
+    color:#777;
+}
+
+footer strong{
+    color:var(--gold);
+}
+
+/* WHATSAPP */
+
+.wa{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+
+    font-size:28px;
+    text-decoration:none;
+
+    z-index:1000;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header{
+        min-height:520px;
+    }
+
+    nav a{
+        padding:11px 9px;
+        font-size:13px;
+    }
+
+    section{
+        padding:65px 0;
+    }
+
+    form{
+        padding:25px 20px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header>
+
+<div class="hero">
+
+<small>Professional Makeup Artist</small>
+
+<h1>Glow Up Studio</h1>
+
+<p>
+Luxury makeup untuk wedding, pre-wedding,
+wisuda, party dan berbagai acara spesial Anda.
+</p>
+
+<a href="#booking" class="btn">
+BOOKING SEKARANG
+</a>
+
+</div>
+
+</header>
+
+
+<!-- NAV -->
+
+<nav>
+
+<a href="#tentang">Tentang</a>
+<a href="#layanan">Layanan</a>
+<a href="#produk">Produk</a>
+<a href="#alat">Alat Makeup</a>
+<a href="#galeri">Portofolio</a>
+<a href="#testimoni">Testimoni</a>
+<a href="#harga">Harga</a>
+<a href="#booking">Booking</a>
+
+</nav>
+
+
+<main class="container">
+
+
+<!-- TENTANG -->
+
+<section id="tentang">
+
+<div class="title">
+
+<span>Glow Up Studio</span>
+
+<h2>Tentang Kami</h2>
+
+</div>
+
+<p class="about">
+
+Glow Up Studio menghadirkan layanan makeup
+profesional dengan hasil yang elegan,
+flawless dan tahan lama.
+
+Kami melayani berbagai kebutuhan makeup,
+mulai dari wedding, pre-wedding, wisuda,
+party hingga acara formal.
+
+</p>
+
+</section>
+
+
+<!-- LAYANAN -->
+
+<section id="layanan">
+
+<div class="title">
+
+<span>Our Services</span>
+
+<h2>Layanan Makeup</h2>
+
+</div>
+
+<div class="services">
+
+<div class="service">
+
+<div class="icon">??</div>
+
+<h3>Wedding Makeup</h3>
+
+<p>
+Makeup pengantin elegan dengan pilihan
+look modern maupun adat.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">??</div>
+
+<h3>Graduation</h3>
+
+<p>
+Makeup fresh, natural dan photogenic
+untuk hari wisuda.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">?</div>
+
+<h3>Party & Event</h3>
+
+<p>
+Glam makeup untuk pesta, ulang tahun,
+gala dinner dan acara formal.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRODUK -->
+
+<section id="produk">
+
+<div class="title">
+
+<span>Beauty Products</span>
+
+<h2>Produk Makeup</h2>
+
+</div>
+
+<div class="products">
+
+
+<div class="product">
+
+<img
+src="https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg"
+alt="Produk kosmetik"
+>
+
+<div class="product-info">
+
+<h3>Beauty Collection</h3>
+
+<p>
+Produk complexion dan kosmetik
+untuk hasil makeup flawless.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<img
+src="https://images.pexels.com/photos/3373744/pexels-photo-3373744.jpeg"
+alt="Produk makeup"
+>
+
+<div class="product-info">
+
+<h3>Makeup Essentials</h3>
+
+<p>
+Berbagai beauty essentials
+untuk kebutuhan makeup profesional.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<img
+src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg"
+alt="Kosmetik"
+>
+
+<div class="product-info">
+
+<h3>Luxury Beauty</h3>
+
+<p>
+Koleksi makeup dengan tampilan
+premium dan elegan.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ALAT -->
+
+<section id="alat">
+
+<div class="title">
+
+<span>Professional Tools</span>
+
+<h2>Alat Makeup</h2>
+
+</div>
+
+<div class="gallery">
+
+
+<div class="photo">
+
+<img
+src="https://images.pexels.com/photos/3762876/pexels-photo-3762876.jpeg"
+alt="Brush makeup"
+>
+
+<div class="caption">
+Makeup Brushes
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="https://images.pexels.com/photos/3373746/pexels-photo-3373746.jpeg"
+alt="Makeup tools"
+>
+
+<div class="caption">
+Professional Tools
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="https://images.pexels.com/photos/2536962/pexels-photo-2536962.jpeg"
+alt="Beauty tools"
+>
+
+<div class="caption">
+Beauty Essentials
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- PORTOFOLIO -->
+
+<section id="galeri">
+
+<div class="title">
+
+<span>Our Work</span>
+
+<h2>Portofolio</h2>
+
+</div>
+
+<div class="gallery">
+
+
+<div class="photo">
+
+<img
+src="https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg"
+alt="Makeup artist"
+>
+
+<div class="caption">
+Soft Glam
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg"
+alt="Bridal makeup"
+>
+
+<div class="caption">
+Bridal Makeup
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="https://images.pexels.com/photos/3373748/pexels-photo-3373748.jpeg"
+alt="Glam makeup"
+>
+
+<div class="caption">
+Glam Makeup
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="https://images.pexels.com/photos/3764014/pexels-photo-3764014.jpeg"
+alt="Beauty makeup"
+>
+
+<div class="caption">
+Elegant Look
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- TESTIMONI -->
+
+<section id="testimoni">
+
+<div class="title">
+
+<span>Client Reviews</span>
+
+<h2>Testimoni</h2>
+
+</div>
+
+<div class="testimonials">
+
+
+<div class="testimonial">
+
+<img
+src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
+alt="Foto ilustrasi pelanggan"
+>
+
+<div class="testimonial-content">
+
+<div class="stars">
+?????
+</div>
+
+<p>
+"Makeup-nya cantik banget.
+Hasilnya natural tapi tetap glamor."
+</p>
+
+<h4>— Sarah</h4>
+
+<div class="illustration">
+Foto ilustrasi — bukan pelanggan asli.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="testimonial">
+
+<img
+src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg"
+alt="Foto ilustrasi pelanggan"
+>
+
+<div class="testimonial-content">
+
+<div class="stars">
+?????
+</div>
+
+<p>
+"Makeup tahan lama sampai acara selesai.
+Pelayanannya juga sangat ramah."
+</p>
+
+<h4>— Amanda</h4>
+
+<div class="illustration">
+Foto ilustrasi — bukan pelanggan asli.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="testimonial">
+
+<img
+src="https://images.pexels.com/photos/1484794/pexels-photo-1484794.jpeg"
+alt="Foto ilustrasi pelanggan"
+>
+
+<div class="testimonial-content">
+
+<div class="stars">
+?????
+</div>
+
+<p>
+"Sangat puas dengan hasil makeup.
+Hasil foto juga terlihat cantik."
+</p>
+
+<h4>— Putri</h4>
+
+<div class="illustration">
+Foto ilustrasi — bukan pelanggan asli.
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- HARGA -->
+
+<section id="harga">
+
+<div class="title">
+
+<span>Our Packages</span>
+
+<h2>Paket Makeup</h2>
+
+</div>
+
+<div class="prices">
+
+
+<div class="price-card">
+
+<h3>Graduation</h3>
+
+<div class="price">
+Rp350K
+</div>
+
+<ul>
+
+<li>? Makeup</li>
+<li>? Hair Styling</li>
+<li>? Lashes</li>
+<li>? Touch Up</li>
+
+</ul>
+
+<a href="#booking" class="btn">
+Booking
+</a>
+
+</div>
+
+
+<div class="price-card featured">
+
+<h3>Party Glam</h3>
+
+<div class="price">
+Rp500K
+</div>
+
+<ul>
+
+<li>? Full Makeup</li>
+<li>? Hair Styling</li>
+<li>? Premium Lashes</li>
+<li>? Touch Up</li>
+
+</ul>
+
+<a href="#booking" class="btn">
+Booking
+</a>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Bridal</h3>
+
+<div class="price">
+Rp1,5JT
+</div>
+
+<ul>
+
+<li>? Bridal Makeup</li>
+<li>? Hair Styling</li>
+<li>? Premium Lashes</li>
+<li>? Consultation</li>
+
+</ul>
+
+<a href="#booking" class="btn">
+Booking
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section id="booking">
+
+<div class="title">
+
+<span>Reservation</span>
+
+<h2>Booking Makeup</h2>
+
+</div>
+
+<div class="booking">
+
+<form id="bookingForm">
+
+
+<div class="form-group">
+
+<label>
+Nama Lengkap
+</label>
+
+<input
+type="text"
+id="nama"
+placeholder="Masukkan nama Anda"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Nomor WhatsApp
+</label>
+
+<input
+type="tel"
+id="telepon"
+placeholder="081234567890"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Tanggal Acara
+</label>
+
+<input
+type="date"
+id="tanggal"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Jenis Makeup
+</label>
+
+<select id="layanan" required>
+
+<option value="">
+-- Pilih Layanan --
+</option>
+
+<option>
+Wedding Makeup
+</option>
+
+<option>
+Pre-Wedding Makeup
+</option>
+
+<option>
+Graduation Makeup
+</option>
+
+<option>
+Party & Event Makeup
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Catatan Tambahan
+</label>
+
+<textarea
+id="catatan"
+placeholder="Contoh: makeup adat Jawa, soft glam, acara pagi, dll."
+></textarea>
+
+</div>
+
+
+<button type="submit">
+?? KIRIM BOOKING VIA WHATSAPP
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 <strong>Glow Up Studio</strong>
+</p>
+
+<p>
+Luxury Makeup Artist • Wedding • Graduation • Party
+</p>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+href="#"
+class="wa"
+id="waButton"
+>
+?
+</a>
+
+
+<script>
+
+/*
+=========================================
+NOMOR WHATSAPP ADMIN
+=========================================
+
+GANTI DENGAN NOMOR ASLI KAMU.
+
+Contoh:
+081234567890
+
+menjadi:
+6281234567890
+
+*/
+
+const nomorWA = "6281234567890";
+
+
+/*
+=========================================
+TANGGAL MINIMUM
+=========================================
+*/
+
+const tanggal =
+document.getElementById("tanggal");
+
+const today = new Date();
+
+const year =
+today.getFullYear();
+
+const month =
+String(today.getMonth()+1)
+.padStart(2,"0");
+
+const day =
+String(today.getDate())
+.padStart(2,"0");
+
+tanggal.min =
+`${year}-${month}-${day}`;
+
+
+/*
+=========================================
+FORM BOOKING
+=========================================
+*/
+
+document
+.getElementById("bookingForm")
+.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const nama =
+document
+.getElementById("nama")
+.value
+.trim();
+
+
+const telepon =
+document
+.getElementById("telepon")
+.value
+.trim();
+
+
+const tanggalValue =
+document
+.getElementById("tanggal")
+.value;
+
+
+const layanan =
+document
+.getElementById("layanan")
+.value;
+
+
+const catatan =
+document
+.getElementById("catatan")
+.value
+.trim()
+|| "Tidak ada";
+
+
+const date =
+new Date(
+tanggalValue+"T00:00:00"
+);
+
+
+const tanggalIndonesia =
+date.toLocaleDateString(
+"id-ID",
+{
+weekday:"long",
+day:"numeric",
+month:"long",
+year:"numeric"
+}
+);
+
+
+const pesan =
+
+`Halo Glow Up Studio ??
+
+Saya ingin melakukan booking makeup.
+
+????????????????
+
+?? Nama:
+${nama}
+
+?? WhatsApp:
+${telepon}
+
+?? Tanggal Acara:
+${tanggalIndonesia}
+
+?? Layanan:
+${layanan}
+
+?? Catatan:
+${catatan}
+
+????????????????
+
+Mohon informasi mengenai ketersediaan jadwal dan harga.
+
+Terima kasih ??`;
+
+
+const encoded =
+encodeURIComponent(pesan);
+
+
+window.open(
+`https://wa.me/${nomorWA}?text=${encoded}`,
+"_blank"
+);
+
+});
+
+
+/*
+=========================================
+WHATSAPP FLOATING
+=========================================
+*/
+
+document
+.getElementById("waButton")
+.addEventListener(
+"click",
+function(event){
+
+event.preventDefault();
+
+const pesan =
+encodeURIComponent(
+"Halo Glow Up Studio ?? Saya ingin bertanya mengenai layanan makeup."
+);
+
+window.open(
+`https://wa.me/${nomorWA}?text=${pesan}`,
+"_blank"
+);
+
+});
+
+</script>
+
+</body>
+</html>
